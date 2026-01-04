@@ -589,3 +589,70 @@ button {
     background-color: var(--color-text-primary);
     color: var(--color-bg-primary);
 }
+
+/* ========================================
+   Quick Start Section
+   ======================================== */
+
+.quick-start-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.step-card {
+    background-color: var(--color-bg-secondary);
+    padding: var(--spacing-md);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+    transition: transform var(--transition-fast);
+}
+
+.step-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-text-secondary);
+}
+
+.step-number {
+    background-color: var(--color-bg-tertiary);
+    color: var(--color-text-primary);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step-details h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-text-primary);
+}
+
+.step-details p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.action-link, .action-link-btn {
+    display: inline-block;
+    color: var(--color-accent-primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+}
+
+.action-link:hover, .action-link-btn:hover {
+    color: var(--color-accent-secondary);
+    border-bottom-color: var(--color-accent-secondary);
+}

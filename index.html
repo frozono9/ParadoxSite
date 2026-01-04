@@ -19,7 +19,10 @@
     <!-- Tab Navigation -->
     <nav class="tab-nav">
         <div class="container">
-            <button class="tab-button active" data-tab="performance">
+            <button class="tab-button active" data-tab="quickstart">
+                <span class="tab-label">QUICK START</span>
+            </button>
+            <button class="tab-button" data-tab="performance">
                 <span class="tab-label">THE EFFECT</span>
             </button>
             <button class="tab-button" data-tab="tutorial">
@@ -32,8 +35,48 @@
     <!-- Main Content Area -->
     <main class="main-content">
         <div class="container">
+            <!-- Tab 0: Quick Start -->
+            <section id="quickstart" class="tab-content active">
+                <div class="section-header">
+                    <h2>Quick Start</h2>
+                </div>
+                <div class="quick-start-content">
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <div class="step-details">
+                            <h3>Open the App</h3>
+                            <a href="https://www.googieimages.com" target="_blank" class="action-link">Launch www.googieimages.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <div class="step-details">
+                            <h3>Authenticate</h3>
+                            <p>Insert your password into the site to unlock the system.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <div class="step-details">
+                            <h3>Watch Performance</h3>
+                            <button onclick="switchToTab('performance')" class="action-link-btn">Go to Effect &rarr;</button>
+                        </div>
+                    </div>
+
+                    <div class="step-card">
+                        <span class="step-number">4</span>
+                        <div class="step-details">
+                            <h3>Learn the Secret</h3>
+                            <button onclick="switchToTab('tutorial')" class="action-link-btn">Go to Tutorial &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- Tab 1: Performance -->
-            <section id="performance" class="tab-content active">
+            <section id="performance" class="tab-content">
                 <div class="section-header">
                     <h2>The Effect</h2>
                 </div>
@@ -66,7 +109,7 @@
 
                 <div class="video-grid">
                     <div class="video-card">
-                        <h3>The Core Method</h3>
+                        <h3>Quick Rundown</h3>
                         <p class="video-description">Explanation of the binary search and anagram technique that makes this trick work.</p>
                         <div class="video-wrapper">
                             <iframe 
@@ -83,8 +126,8 @@
                     </div>
 
                     <div class="video-card">
-                        <h3>Handling & Nuances</h3>
-                        <p class="video-description">Master the phone handling, precise gestures, and multiple outs for foolproof performances.</p>
+                        <h3>In-depth Tutorial</h3>
+                        <p class="video-description">Longer tutorial with detailed explanations and advanced techniques.</p>
                         <div class="video-wrapper">
                             <iframe 
                                 width="100%" 
