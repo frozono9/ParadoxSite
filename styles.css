@@ -1,0 +1,591 @@
+/* ========================================
+   PARADOX - CSS Stylesheet
+   Dark, Modern, Mysterious Theme
+   ======================================== */
+
+/* ========================================
+   Root Variables & Typography
+   ======================================== */
+
+:root {
+    /* Color Palette */
+    --color-bg-primary: #262626;      /* Dark Gray Base */
+    --color-bg-secondary: #333333;    /* Lighter Gray */
+    --color-bg-tertiary: #404040;     /* Even Lighter Gray */
+    --color-accent-primary: #ffffff;  /* White */
+    --color-accent-secondary: #cccccc; /* Light Gray */
+    --color-text-primary: #ffffff;    /* White */
+    --color-text-secondary: #aaaaaa;  /* Medium Gray */
+    --color-border: #444444;          /* Border Gray */
+    
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-secondary: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --spacing-xl: 4rem;
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+/* ========================================
+   Reset & Global Styles
+   ======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-accent-secondary);
+}
+
+button {
+    font-family: var(--font-primary);
+    border: none;
+    background: none;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+/* ========================================
+   Container & Layout
+   ======================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    width: 100%;
+}
+
+/* ========================================
+   Header / Logo Section
+   ======================================== */
+
+.header {
+    background: transparent;
+    border-bottom: none;
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    animation: fadeInDown 0.6s ease;
+}
+
+.logo-image {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.9;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+/* ========================================
+   Tab Navigation
+   ======================================== */
+
+.tab-nav {
+    background-color: var(--color-bg-primary);
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.tab-nav .container {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-sm) 0;
+}
+
+.tab-button {
+    padding: var(--spacing-sm) 0;
+    background-color: transparent;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: all var(--transition-normal);
+}
+
+.tab-button:hover {
+    color: var(--color-text-primary);
+}
+
+.tab-button.active {
+    color: var(--color-text-primary);
+    border-bottom-color: var(--color-text-primary);
+}
+
+.tab-button.active:hover {
+    background-color: transparent;
+}
+
+.tab-icon {
+    font-size: 1.2rem;
+}
+
+.tab-label {
+    font-weight: 600;
+}
+
+/* ========================================
+   Main Content & Tabs
+   ======================================== */
+
+.main-content {
+    min-height: calc(100vh - 400px);
+    padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   Section Headers
+   ======================================== */
+
+.section-header {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+/* ========================================
+   Video Styling
+   ======================================== */
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: var(--color-bg-secondary);
+    margin: var(--spacing-lg) 0;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+}
+
+/* ========================================
+   Performance Tab (Tab 1)
+   ======================================== */
+
+.effect-description {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    background: transparent;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.effect-description p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-md);
+    font-weight: 300;
+}
+
+.effect-description .highlight-text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--color-text-primary);
+    letter-spacing: 2px;
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+}
+
+.effect-description .subtitle {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+    opacity: 0.6;
+}
+
+/* ========================================
+   Tutorial Tab (Tab 2)
+   ======================================== */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.video-card {
+    background-color: var(--color-bg-primary);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: var(--spacing-lg);
+    transition: all var(--transition-normal);
+}
+
+.video-card:hover {
+    border-color: var(--color-accent-primary);
+    transform: translateY(-2px);
+}
+
+.video-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+    font-weight: 400;
+}
+
+.video-description {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.7;
+}
+
+/* ========================================
+   Guide Tab (Tab 3)
+   ======================================== */
+
+.guide-article {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--spacing-xl) 0;
+}
+
+.guide-section {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.guide-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.guide-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-primary);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.guide-section h4 {
+    font-size: 1.2rem;
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-primary);
+    font-weight: 500;
+}
+
+.guide-section p {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-secondary);
+    line-height: 1.9;
+}
+
+.guide-section ul {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+    padding-left: var(--spacing-md);
+}
+
+.guide-section li {
+    margin-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+    position: relative;
+    color: var(--color-text-secondary);
+    line-height: 1.8;
+}
+
+.guide-section li:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--color-text-secondary);
+    font-weight: normal;
+}
+
+.guide-section strong {
+    color: var(--color-text-primary);
+    font-weight: 600;
+}
+
+.placeholder-diagram {
+    background-color: var(--color-bg-secondary);
+    border: 2px dashed var(--color-border);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================
+   Footer
+   ======================================== */
+
+.footer {
+    background-color: var(--color-bg-primary);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-xl) var(--spacing-md);
+    text-align: center;
+    margin-top: var(--spacing-xl);
+}
+
+.footer p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-tagline {
+    color: var(--color-text-secondary);
+    font-style: normal;
+    opacity: 0.6;
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+/* Tablet Screens */
+@media (max-width: 768px) {
+    .logo {
+        font-size: 2.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .tab-nav .container {
+        gap: var(--spacing-sm);
+    }
+
+    .tab-button {
+        padding: var(--spacing-sm) 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .guide-article {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .video-wrapper {
+        margin: var(--spacing-md) 0;
+    }
+}
+
+/* Mobile Screens */
+@media (max-width: 480px) {
+    :root {
+        --spacing-md: 1rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 2.5rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+        letter-spacing: 1px;
+    }
+
+    .tagline {
+        font-size: 0.9rem;
+    }
+
+    .header {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .tab-button {
+        padding: var(--spacing-sm) 0.5rem;
+        font-size: 0.7rem;
+    }
+
+    .effect-description {
+        padding: var(--spacing-md);
+    }
+
+    .effect-description p {
+        font-size: 1rem;
+    }
+
+    .video-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .guide-article {
+        padding: var(--spacing-lg) var(--spacing-sm);
+    }
+
+    .guide-section h3 {
+        font-size: 1.3rem;
+    }
+
+    .guide-section h4 {
+        font-size: 1rem;
+    }
+
+    .guide-section li {
+        padding-left: var(--spacing-md);
+    }
+
+    .placeholder-diagram {
+        min-height: 150px;
+        padding: var(--spacing-md);
+    }
+
+    .main-content {
+        min-height: auto;
+    }
+}
+
+/* ========================================
+   Scrollbar Styling
+   ======================================== */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-bg-tertiary);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-secondary);
+}
+
+/* ========================================
+   Selection
+   ======================================== */
+
+::selection {
+    background-color: var(--color-text-primary);
+    color: var(--color-bg-primary);
+}
+
+::-moz-selection {
+    background-color: var(--color-text-primary);
+    color: var(--color-bg-primary);
+}
